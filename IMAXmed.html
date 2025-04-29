@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAX Med</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <header>
+        <!-- Hamburger Menu -->
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776; <!-- Unicode for hamburger menu (three lines) -->
+        </div>
+    
+        <!-- Logo Section -->
+        <div class="logo">
+            <h1>IMAX med</h1>
+        </div>
+    
+        <!-- Navigation Links -->
+        <nav id="nav-menu" class="nav-menu">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section (Clinic Management Software with Image) -->
+        <section class="hero">
+            <div class="image-text-container">
+                <!-- Left-aligned Image -->
+                <img src="images/Doctor-unsplash.jpg" alt="Doctor" class="hero-image">
+                <!-- Text Content -->
+                <div class="hero-text">
+                    <h2>Программное обеспечение для управления клиникой</h2>
+                    <p>Комплексное решение, предназначенное для автоматизации административных задач вашей клиники, обеспечивающее точность и экономящее ваше драгоценное время.</p>
+                    <div class="buttons">
+                        <a href="#" class="button">Sign up</a>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+        <!-- Grouped Sections: Possibilities, Solutions, About -->
+        <div class="content-sections">
+            <section class="possibilities">
+                <h2>Возможности</h2>
+                <ul>
+                    <li>Онлайн-бронирование</li>
+                    <li>Автоматизация ведения реестра</li>
+                    <li>Управленческая отчетность</li>
+                    <li>Кассово-финансовый учет</li>
+                    <li>Складской учет</li>
+                </ul>
+            </section>
+    
+            <section class="solutions">
+                <h2>Решения</h2>
+                <ul>
+                    <li>Менеджер</li>
+                    <li>Администратор</li>
+                    <li>Врач</li>
+                    <li>Клиническая программа</li>
+                    <li>CRM для клиники</li>
+                </ul>
+            </section>
+    
+            <section class="about">
+                <h2>О компании</h2>
+                <p>IMAX Med a средствах массовой информации</p>
+                <ul>
+                    <li>Партнеры</li>
+                    <li>Контакты</li>
+                    <li>Цены</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>2024 IMAX Med</p>
+        <div class="right-content">
+            <a href="#">E-mail</a>
+            <button>ПОДПИСАТЬСЯ</button>
+        </div>    
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i> <!-- Facebook icon -->
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i> <!-- Twitter icon -->
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+            </a>
+
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+    
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
+    <script src="script.js"></script> 
+</body>
+</html>

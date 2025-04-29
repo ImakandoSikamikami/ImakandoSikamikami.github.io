@@ -1,0 +1,442 @@
+/* style.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Aligns the logo and navigation */
+    align-items: center; /* Vertically centers the content */
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    z-index: 1000;
+}
+.menu-toggle{
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: white;
+}
+.nav-menu{
+    display: flex;
+    gap: 20px;
+}
+@media (max-width: 768px){
+    .menu-toggle{
+        display: block;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-menu.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #fff;
+}
+
+header nav {
+    margin-left: auto; /* Pushes the navigation to the right */
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Makes the navigation links horizontal */
+    gap: 20px;
+}
+
+header nav li {
+    margin-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+header nav a:hover{
+    color:#007BFF;
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 40px;
+    gap: 20px;
+    text-align: center;
+}
+.image-text-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+.hero-image{
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: none;
+}
+.hero-text{
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+@media (max-width: 768px){
+    .image-text-container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image{
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    .hero-text{
+        padding: 0 10px;
+    }
+    .hero-text h2{
+        font-size: 24px;
+    }
+    .hero-text p {
+        font-size: 16px;
+    }
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+.hero  .button:last-child {
+   margin-right: 0;
+}
+@media (max-widith:768px){
+    .image-text-container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image{
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    .hero-text{
+        padding: 0;
+        text-align: center;
+    }
+    .hero h2 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* Main layout (Flexbox for sections) */
+/* Main styles */
+main {
+    display: flex;
+    flex-direction: column; /* Ensures sections are stacked vertically */
+    gap: 20px; /* Adds spacing between sections */
+    padding: 20px;
+}
+
+/* Hero section (always on top) */
+.hero {
+    background-color: #f0f0f0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Content sections below the hero */
+.content-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    gap: 20px; /* Adds spacing between the grouped sections */
+    justify-content: space-between;
+}
+
+.content-sections section {
+    flex: 1 1 calc(33.33% - 40px); /* Each section takes one-third of the row */
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.possibilities{
+    background-image: url('Images/drip-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+.possibilities::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+}
+.possibilities h2,
+.possibilities u1 {
+    position: relative;
+    z-index: 2;
+}
+/* Background for Solutions Section */
+.solutions {
+    background-image: url('images/solutions-unsplash.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 20px; /* Adds spacing inside the section */
+    border-radius: 8px; /* Optional: Rounds the corners */
+    color: #fff; /* Changes text color to white for better contrast */
+}
+
+/* Optional: Add overlay effect to enhance readability for Solutions */
+.solutions::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Black overlay with 50% transparency */
+    z-index: 1; /* Places it below the content */
+}
+
+.solutions h2,
+.solutions ul {
+    position: relative;
+    z-index: 2; /* Ensures the content appears above the overlay */
+}
+
+/* Background for About Section */
+.about {
+    background-image: url('images/clinic-unsplash.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 20px; /* Adds spacing inside the section */
+    border-radius: 8px; /* Optional: Rounds the corners */
+    color: #fff; /* Changes text color to white for better contrast */
+}
+
+/* Optional: Add overlay effect to enhance readability for About */
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Black overlay with 50% transparency */
+    z-index: 1; /* Places it below the content */
+}
+
+.about h2,
+.about ul {
+    position: relative;
+    z-index: 2; /* Ensures the content appears above the overlay */
+}
+
+/* Responsive layout for content sections */
+@media (max-width: 768px) {
+    .content-sections section {
+        flex: 1 1 calc(50% - 20px); /* Two sections per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .content-sections section {
+        flex: 1 1 100%; /* Full width for each section on small screens */
+
+    }
+
+}
+
+/* Footer styles */
+footer {
+    display: flex; /* Enables flexbox for the footer */
+    justify-content: space-between; /* Aligns content to the left and right */
+    align-items: center; /* Vertically aligns items */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Space inside the footer */
+}
+
+footer p {
+    margin: 0; /* Removes extra margin for alignment */
+}
+
+footer .right-content {
+    display: flex; /* Makes the email, subscribe button, and social media a flex container */
+    align-items: center; /* Vertically aligns items */
+    gap: 20px; /* Adds space between elements */
+}
+
+footer a,
+footer button {
+    color: #fff;
+    text-decoration: none;
+}
+footer button {
+    color:black;
+    background-color:#fff;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius:5px;
+}
+footer .email-input{
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+footer .email-input:focus{
+    border-color: #ccc;
+    outline: white
+}
+footer .social-media{
+    display: flex;
+    gap: 15px;
+}
+
+footer .social-media a {
+    margin-right: 10px; /* Adds spacing between social media icons */
+    color: #fff; /* Ensures social icons are visible on dark background */
+    font-size: 24px;
+}
+
+footer .social-media a:last-child {
+    margin-right: 0; /* Removes margin for the last icon */
+}
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack the content vertically */
+        align-items: center; /* Center align footer content */
+        text-align: center; /* Center align footer text */
+    }
+
+    footer .right-content {
+        flex-direction: column; /* Stack the buttons and email field vertically */
+        gap: 10px; /* Add space between the items */
+    }
+}
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Adjust base font size */
+    }
+
+    footer .email-input,
+    footer button {
+        font-size: 12px; /* Reduce font size for email input and buttons */
+        padding: 8px 10px; /* Adjust button padding */
+    }
+
+    .hero h2 {
+        font-size: 24px; /* Reduce font size of the heading */
+    }
+}
+
+
+/* Responsive design (Media queries) */
+@media (max-width: 768px) {
+    main section {
+        flex: 1 1 calc(50% - 20px); /* Two sections per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    main section {
+        flex: 1 1 100%; /* Full width for each section on small screens */
+    }
+}
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column; /* Stack the items vertically */
+        gap: 10px;
+    }
+
+    header nav li {
+        text-align: center;
+    }
+}
+/* Existing media query for smaller screens */
+@media (max-width: 768px) {
+
+    .content-sections section {
+        flex: 1 1 calc(50% - 20px); /* Adjust other sections */
+    }
+
+    /* Add responsiveness for the clinic software section */
+    .clinic-software {
+        flex-direction: column; /* Stack the image and text vertically */
+        text-align: center; /* Center the content */
+    }
+
+    .clinic-image {
+        max-width: 80%; /* Scale down the image on smaller screens */
+    }
+
+    .text-content {
+        padding: 0; /* Remove extra padding for smaller screens */
+    }
+
+    .text-content h2 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .text-content p {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+}
